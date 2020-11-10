@@ -16,6 +16,24 @@ For video-level classification, a pre-trained CNN is used to extract spatial fea
 
 Scripts are in the folder `resnet_mlp`.
 
+1. Install necessary packages.
+
+2. Download videos from YouTube channels as described in the submitted report.
+
+3. Modify the hyper-parameters in `TrainConfig.py`. For the CNN component, ResNet50, ResNet101, and ResNet152 are supported.
+
+4. Start to train the CNN + MLP model. The default model can run on a single GPU. Each epoch takes approximately 30 minutes on a NVIDIA Tesla T4 GPU.
+
+```
+python Train.py
+```
+
+5. Evaluate a trained model. First, set the path to the checkpoint in `Test.py`. Then, run the following
+
+```
+python Test.py
+```
+
 
 ### Video-Level Classification: CNN + RNN (CRNN)
 
@@ -25,7 +43,7 @@ Scripts are in the folder `resnet_lstm`.
 
 2. Download videos from YouTube channels as described in the submitted report.
 
-3. Modify the hyper-parameters in `TrainConfig.py`.
+3. Modify the hyper-parameters in `TrainConfig.py`. For the CNN component, ResNet50, ResNet101, and ResNet152 are supported.
 
 4. Start to train the CRNN model. The default model can run on a single GPU. Each epoch takes approximately 15 minutes on a NVIDIA Tesla T4 GPU.
 
