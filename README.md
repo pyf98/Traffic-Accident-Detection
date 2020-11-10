@@ -14,8 +14,12 @@ For video-level classification, a pre-trained CNN is used to extract spatial fea
 
 ### Frame-Level Classification: CNN + MLP
 
+Scripts are in the folder `resnet_mlp`.
+
 
 ### Video-Level Classification: CNN + RNN (CRNN)
+
+Scripts are in the folder `resnet_lstm`.
 
 1. Install necessary packages.
 
