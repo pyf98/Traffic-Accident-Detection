@@ -25,8 +25,8 @@ For video-level classification, a pre-trained CNN is used to extract spatial fea
 
 4. Start to train the CRNN model. The default model can run on a single GPU. Each epoch takes approximately 15 minutes on a NVIDIA Tesla T4 GPU.
 
->> python Train.py
+> python Train.py
 
 5. Evaluate a trained model. First, set the path to the checkpoint in `Test.py`. Then, run the following
 
->> python Test.py
+> python Test.py
