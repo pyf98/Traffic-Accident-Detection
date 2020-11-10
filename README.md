@@ -12,6 +12,11 @@ For video-level classification, a pre-trained CNN is used to extract spatial fea
 
 ## Usage
 
+### Frame-Level Classification: CNN + MLP
+
+
+### Video-Level Classification: CNN + RNN (CRNN)
+
 1. Install necessary packages.
 
 2. Download videos from YouTube channels as described in the submitted report.
@@ -25,4 +30,3 @@ For video-level classification, a pre-trained CNN is used to extract spatial fea
 5. Evaluate a trained model. First, set the path to the checkpoint in `Test.py`. Then, run the following
 
 >> python Test.py
-
