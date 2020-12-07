@@ -12,6 +12,17 @@ For frame-level classification, a pre-trained CNN is applied to every frame and 
 
 For video-level classification, a pre-trained CNN is used to extract spatial features and a multi-layer RNN is employed to capture temporal information.
 
+## Requirements
+
+```
+numpy
+tqdm
+torchvision==0.7.0
+torch==1.6.0
+Pillow
+scikit_learn
+```
+
 ## Usage
 
 ### Frame-Level Classification: CNN + MLP
