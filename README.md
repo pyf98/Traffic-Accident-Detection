@@ -1,6 +1,8 @@
 # Traffic-Accident-Detection
 
-This repository contains the python scripts written by Yifan Peng for the IDL course project.
+This repository is for the course project of IDL.
+
+The following will be updated in a few days.
 
 ## Introduction
 
