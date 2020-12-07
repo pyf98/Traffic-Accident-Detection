@@ -1,8 +1,8 @@
 # Traffic-Accident-Detection
 
-This repository is for the course project of IDL.
+This repository contains the python scripts for the IDL course project.
 
-The following will be updated in a few days.
+TODO: The following will be updated in a few days.
 
 ## Introduction
 
