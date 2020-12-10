@@ -97,4 +97,7 @@ It will automatically calculate the video-level AUC and accuracy, which will be 
 
 Our evaluation metric is video-level AUC and accuracy (ACC). Please refer to our final report for the details.
 
+The following figure visualizes our result. The red region represents the anomaly window. Our model is able to predict high scores for those frames.
+
+![vis](img/visualization.png "Visualization of our results")
 
