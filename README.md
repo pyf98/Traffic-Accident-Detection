@@ -1,8 +1,8 @@
 # Traffic-Accident-Detection
 
-This repository is for the course project of IDL.
+This repository contains the python scripts for the IDL course project.
 
-The following will be updated in a few days.
+TODO: The following will be updated in a few days.
 
 ## Introduction
 
@@ -11,6 +11,17 @@ In this project, traffic accident detection is interpreted as a binary classific
 For frame-level classification, a pre-trained CNN is applied to every frame and the extracted features are classified by a multi-layer perceptron.
 
 For video-level classification, a pre-trained CNN is used to extract spatial features and a multi-layer RNN is employed to capture temporal information.
+
+## Requirements
+
+```
+numpy
+tqdm
+torchvision==0.7.0
+torch==1.6.0
+Pillow
+scikit_learn
+```
 
 ## Usage
 
