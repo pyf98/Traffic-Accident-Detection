@@ -57,9 +57,23 @@ The spatial-temporal stream takes RGB frames as input, which contain appearance 
 
 * ResNet + BiLSTM: Similar to the second model, the network configuration is in `conf/lstm_rgb.py`. Note that `configs['net']['rnn_bidir']` should be set to `True` for bidirectional LSTM. To train a model, run `python train_lstm_rgb.py`. To evaluate a trained model, run `python test_lstm_rgb.py --ckpt path/to/checkpoint`. Please refer to `test_lstm_rgb.py` for other options such as `n_frames` and `batch_size`.
 
+After running the test script, predictions will be saved as a `.npy` file in the same folder as the model checkpoint. The saved file can be used in the fusion section.
+
 ![crnn](imgs/crnn.png "Convolutional Recurrent Neural Network (CRNN)")
 
+
 ### Motion Stream
+
+The motion stream takes dense optical flow as input, which represents motion features. Our results have demonstrated that motion features are better for accident detection in dash-cam videos with dynamic backgrounds. We utilize a recently proposed deep learning-based algorithm ([RAFT](https://github.com/princeton-vl/RAFT)) to estimate optical flow and save optical flow maps as jpg images. Note that each optical flow map has only two channels (horizontal and vertical) instead of three, so the last color channel of the image is set to zero.
+
+Here we compare three architectures: ResNet-based Conv2d, ResNet with LSTM, and ResNet with BiLSTM. Results show that LSTMs have better capacity for modeling temporal relationship within a video clip, which achieve higher AUC and accuracy.
+
+* ResNet-based Conv2d: Different from CNN-MLP for 3-channel RGB frames, each time this model takes stacked optical flow maps as input, which can be considered as a multi-channel image. The ResNet is initialized with pre-trained weights but the first convolutional layer needs additional processing (3-channel -> multi-channel). The configuration file is `conf/cnn_flow.py` which contains all the hyperparameters for training. To train a model from scratch, run `python train_cnn_flow.py`. To resume training, first set the `configs['resume']` variable in `conf/cnn_flow.py` and then run `python train_cnn_flow.py`. 
+
+* ResNet + LSTM:
+
+* ResNet + BiLSTM: 
+
 
 
 ### Fusion of Two Streams
