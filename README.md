@@ -3,16 +3,13 @@
 This repository contains the scripts for our IDL course project: **Traffic Accident Detection via Deep Learning**.
 
 
-
 ## Introduction
 
-In this project, traffic accident detection is interpreted as a binary classification task. Models can work on either individual frames or videos.
-
-For frame-level classification, a pre-trained CNN is applied to every frame and the extracted features are classified by a multi-layer perceptron.
-
-For video-level classification, a pre-trained CNN is used to extract spatial features and a multi-layer RNN is employed to capture temporal information.
+Detecting anomalous events such as road accidents in natural driving scenes is a challenging task. The majority of previous studies focus on fixed cameras with static backgrounds. In this project, we design a CRNN-based two-stream method using both RGB frames and optical flow to detect traffic accidents in first-person dash-cam videos. Our hypotheses are that motion features can improve the detection performance and that CRNN-based approaches are better for modeling temporal relationship than conventional CNN-based approaches. Results show that the motion stream outperforms the spatial-temporal stream, and that the fusion of two streams can further improve our model's performance.
 
 ## Requirements
+
+Our models are implemented using PyTorch. Required packages are listed in `requirements.txt`.
 
 ```
 numpy
@@ -25,47 +22,4 @@ scikit_learn
 
 ## Usage
 
-### Frame-Level Classification: CNN + MLP
 
-Scripts are in the folder `resnet_mlp`.
-
-1. Install necessary packages.
-
-2. Download videos from YouTube channels as described in the submitted report.
-
-3. Modify the hyper-parameters in `TrainConfig.py`. For the CNN component, ResNet50, ResNet101, and ResNet152 are supported.
-
-4. Start to train the CNN + MLP model. The default model can run on a single GPU. Each epoch takes approximately 30 minutes on a NVIDIA Tesla T4 GPU.
-
-```
-python Train.py
-```
-
-5. Evaluate a trained model. First, set the path to the checkpoint in `Test.py`. Then, run the following
-
-```
-python Test.py
-```
-
-
-### Video-Level Classification: CNN + RNN (CRNN)
-
-Scripts are in the folder `resnet_lstm`.
-
-1. Install necessary packages.
-
-2. Download videos from YouTube channels as described in the submitted report.
-
-3. Modify the hyper-parameters in `TrainConfig.py`. For the CNN component, ResNet50, ResNet101, and ResNet152 are supported.
-
-4. Start to train the CRNN model. The default model can run on a single GPU. Each epoch takes approximately 15 minutes on a NVIDIA Tesla T4 GPU.
-
-```
-python Train.py
-```
-
-5. Evaluate a trained model. First, set the path to the checkpoint in `Test.py`. Then, run the following
-
-```
-python Test.py
-```
