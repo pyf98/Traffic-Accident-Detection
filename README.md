@@ -1,8 +1,8 @@
 # Traffic-Accident-Detection
 
-This repository contains the python scripts for the IDL course project.
+This repository contains the scripts for our IDL course project: **Traffic Accident Detection via Deep Learning**.
 
-TODO: The following will be updated in a few days.
+
 
 ## Introduction
 
