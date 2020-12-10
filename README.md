@@ -1,13 +1,13 @@
-# Traffic-Accident-Detection
+# Traffic Accident Detection via Deep Learning
 
-This repository contains the scripts for our IDL course project: **Traffic Accident Detection via Deep Learning**.
+This repository contains the code of our IDL course project.
 
 
 ## Introduction
 
 Detecting anomalous events such as road accidents in natural driving scenes is a challenging task. The majority of previous studies focus on fixed cameras with static backgrounds. In this project, we design **a CRNN-based two-stream method using both RGB frames and optical flow to detect traffic accidents in first-person dash-cam videos**. Our hypotheses are that motion features can improve the detection performance and that CRNN-based approaches are better for modeling temporal relationship than conventional CNN-based approaches. Results show that the motion stream outperforms the spatial-temporal stream, and that the fusion of two streams can further improve our model's performance.
 
-![CRNN-based two-stream method for traffic accident detection](imgs/crnn_twostream.png)
+![two-stream](imgs/crnn_twostream.png "CRNN-based two-stream method for traffic accident detection")
 
 ## Requirements
 
@@ -22,6 +22,29 @@ Pillow
 scikit_learn
 ```
 
+To install these packages, run
+
+```
+pip install -r requirements.txt
+```
+
+All models can be trained on a single NVIDIA Tesla T4 GPU using the default configuration.
+
+## Dataset
+
+We employ a recently introduced traffic anomaly dataset called [Detection of Traffic Anomaly](https://github.com/MoonBlvd/Detection-of-Traffic-Anomaly "Detection of Traffic Anomaly Dataset") (DoTA). DoTA contains 4,677 dash-cam videos collected from YouTube channels. These ego-centric driving videos are from different countries and under different weather and lighting conditions.
+
+**Note that due to issues with YouTube, some videos are no longer available. We have collected 4,085 videos in total.** Most videos in DoTA can be separated into three temporal partitions: precursor, anomaly window, and post-anomaly. We label the first part (i.e. precursor) as normal or non-accident, and the second part (i.e. anomaly window) as anomaly or accident. But we do not use the third part.
+
 ## Models
+
+### Spatial-Temporal Stream
+
+
+### Motion Stream
+
+
+### Fusion of Two Streams
+
 
 
