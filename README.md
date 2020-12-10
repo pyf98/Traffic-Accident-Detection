@@ -93,3 +93,8 @@ python test_combined.py --rgb_file path/to/rgb/results --flow_file path/to/optic
 
 It will automatically calculate the video-level AUC and accuracy, which will be display in the terminal.
 
+## Results
+
+Our evaluation metric is video-level AUC and accuracy (ACC). Please refer to our final report for the details.
+
+
