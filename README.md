@@ -53,7 +53,7 @@ The spatial-temporal stream takes RGB frames as input, which contain appearance 
 
 * ResNet + MLP: The code is in `frame_video_level_cnn`. Models are trained on individual frames and evaluated by frame-level and video-level metrics.
 
-* ResNet + LSTM: The network configuration is in `conf/lstm_rgb.py`. To train a model, run `python train_lstm_rgb.py`. To evaluate a trained model, run `python test_lstm_rgb.py --ckpt path/to/checkpoint`.
+* ResNet + LSTM: The network configuration is in `conf/lstm_rgb.py`. Note that `configs['net']['rnn_bidir']` should be set to `False` for unidirectional LSTM. To train a model, run `python train_lstm_rgb.py`. To evaluate a trained model, run `python test_lstm_rgb.py --ckpt path/to/checkpoint`. Please refer to `test_lstm_rgb.py` for other options such as `n_frames` and `batch_size`.
 
 * ResNet + BiLSTM:
 
