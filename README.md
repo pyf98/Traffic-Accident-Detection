@@ -55,7 +55,7 @@ The spatial-temporal stream takes RGB frames as input, which contain appearance 
 
 * ResNet + LSTM: The network configuration is in `conf/lstm_rgb.py`. Note that `configs['net']['rnn_bidir']` should be set to `False` for unidirectional LSTM. To train a model, run `python train_lstm_rgb.py`. To evaluate a trained model, run `python test_lstm_rgb.py --ckpt path/to/checkpoint`. Please refer to `test_lstm_rgb.py` for other options such as `n_frames` and `batch_size`.
 
-* ResNet + BiLSTM:
+* ResNet + BiLSTM: Similar to the second model, the network configuration is in `conf/lstm_rgb.py`. Note that `configs['net']['rnn_bidir']` should be set to `True` for bidirectional LSTM. To train a model, run `python train_lstm_rgb.py`. To evaluate a trained model, run `python test_lstm_rgb.py --ckpt path/to/checkpoint`. Please refer to `test_lstm_rgb.py` for other options such as `n_frames` and `batch_size`.
 
 ![crnn](imgs/crnn.png "Convolutional Recurrent Neural Network (CRNN)")
 
