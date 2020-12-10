@@ -2,6 +2,15 @@
 
 This repository contains the code of our IDL course project in Fall 2020.
 
+## Contributors
+
+**Yifan Peng** and **Amine Bellamkaddem** are the two contributors of this repository.
+
+**Yifan Peng** is the main contributor of this project. He implemented the vast majority of our models. Specifically, he provided an initial version for `frame_video_level_cnn`, which was further developed by Amine. All the other scripts in this repository are completed by Yifan Peng.
+
+**Amine Bellamkaddem** developed `frame_video_level_cnn` based on the initial version by Yifan and explored more architectures such as VGG16. Please see the folder `frame_video_level_cnn` for more information.
+
+Details about division of work is in our final report.
 
 ## Introduction
 
@@ -99,5 +108,5 @@ Our evaluation metric is video-level AUC and accuracy (ACC). Please refer to our
 
 The following figure visualizes our result. The red region represents the anomaly window. Our model is able to predict high scores for those frames.
 
-![vis](img/visualization.png "Visualization of our results")
+![vis](imgs/visualization.png "Visualization of our results")
 
