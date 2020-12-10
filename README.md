@@ -79,5 +79,9 @@ After running the test script, results will be saved as a `.npy` file, which can
 
 ### Fusion of Two Streams
 
+There are many fusion strategies that can be used to merge two predictions. We adopt a simple but effective strategy, namely weighted average fusion after the last activation. The main advantage of this approach is that we don't need to retrain our model and there is only one hyperparameter, i.e. the weight of the first prediction.
 
+```
+fusion_pred = rgb_weight * rgb_pred + (1. - rgb_weight) * flow_pred
+```
 
