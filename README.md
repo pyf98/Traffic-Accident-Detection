@@ -41,8 +41,11 @@ Dataset | Training | Validation | Test
 \#video clips | 5,700 | 801 | 1,657
 \#frames | 208,649 | 29,997 | 58,778
 
+Dataset classes are defined in `data.py`.
 
 ## Models
+
+Models are defined in `networks.py`.
 
 ### Spatial-Temporal Stream
 
@@ -50,10 +53,11 @@ The spatial-temporal stream takes RGB frames as input, which contain appearance 
 
 * ResNet + MLP: The code is in `frame_video_level_cnn`. Models are trained on individual frames and evaluated by frame-level and video-level metrics.
 
-* ResNet + LSTM:
+* ResNet + LSTM: The network configuration is in `conf/lstm_rgb.py`. To train a model, run `python train_lstm_rgb.py`. To evaluate a trained model, run `python test_lstm_rgb.py --ckpt path/to/checkpoint`.
 
 * ResNet + BiLSTM:
 
+![crnn](imgs/crnn.png "Convolutional Recurrent Neural Network (CRNN)")
 
 ### Motion Stream
 
