@@ -68,12 +68,13 @@ The motion stream takes dense optical flow as input, which represents motion fea
 
 Here we compare three architectures: ResNet-based Conv2d, ResNet with LSTM, and ResNet with BiLSTM. Results show that LSTMs have better capacity for modeling temporal relationship within a video clip, which achieve higher AUC and accuracy.
 
-* ResNet-based Conv2d: Different from CNN-MLP for 3-channel RGB frames, each time this model takes stacked optical flow maps as input, which can be considered as a multi-channel image. The ResNet is initialized with pre-trained weights but the first convolutional layer needs additional processing (3-channel -> multi-channel). The configuration file is `conf/cnn_flow.py` which contains all the hyperparameters for training. To train a model from scratch, run `python train_cnn_flow.py`. To resume training, first set the `configs['resume']` variable in `conf/cnn_flow.py` and then run `python train_cnn_flow.py`. 
+* ResNet-based Conv2d: Different from CNN-MLP for 3-channel RGB frames, each time this model takes stacked optical flow maps as input, which can be considered as a multi-channel image. The ResNet is initialized with pre-trained weights but the first convolutional layer needs additional processing (3-channel -> multi-channel). The configuration file is `conf/cnn_flow.py` which contains all the hyperparameters for training. To train a model from scratch, run `python train_cnn_flow.py`. To resume training, first set the `configs['resume']` variable in `conf/cnn_flow.py` and then run `python train_cnn_flow.py`. To evaluate a trained model, run `python test_cnn_flow.py --ckpt path/to/checkpoint`. Other options such as `data_root`, `data_list` and `batch_size` can also be changed.
 
-* ResNet + LSTM:
+* ResNet + LSTM: The network configuration is in `conf/lstm_flow.py`. For unidirectional LSTM, set `configs['net']['rnn_bidir'] = False`. To train a model, run `python train_lstm_flow.py`. To evaluate a trained model using the test set, run `python test_lstm_flow.py --ckpt path/to/checkpoint`.
 
-* ResNet + BiLSTM: 
+* ResNet + BiLSTM: The network configuration is in `conf/lstm_flow.py`. For bidirectional LSTM, set `configs['net']['rnn_bidir'] = True`. To train a model, run `python train_lstm_flow.py`. To evaluate a trained model using the test set, run `python test_lstm_flow.py --ckpt path/to/checkpoint`.
 
+After running the test script, results will be saved as a `.npy` file, which can be used in the fusion section.
 
 
 ### Fusion of Two Streams
