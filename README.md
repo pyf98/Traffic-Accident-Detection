@@ -85,8 +85,11 @@ There are many fusion strategies that can be used to merge two predictions. We a
 fusion_pred = rgb_weight * rgb_pred + (1. - rgb_weight) * flow_pred
 ```
 
-To calculate the fusion of two streams, run the following:
+To calculate the fusion of two streams, run this command:
 
 ```
-python test_combined.py --rgb_file path/to/rgb/prediction --flow_file path/to/optical/flow/prediction --rgb_weight your_preferred_weight
+python test_combined.py --rgb_file path/to/rgb/results --flow_file path/to/optical/flow/results --rgb_weight your_preferred_weight
 ```
+
+It will automatically calculate the video-level AUC and accuracy, which will be display in the terminal.
+
