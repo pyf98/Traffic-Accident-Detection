@@ -1,6 +1,6 @@
 # Traffic Accident Detection via Deep Learning
 
-This repository contains the code of our IDL course project.
+This repository contains the code of our IDL course project in Fall 2020.
 
 
 ## Introduction
@@ -34,11 +34,25 @@ All models can be trained on a single NVIDIA Tesla T4 GPU using the default conf
 
 We employ a recently introduced traffic anomaly dataset called [Detection of Traffic Anomaly](https://github.com/MoonBlvd/Detection-of-Traffic-Anomaly "Detection of Traffic Anomaly Dataset") (DoTA). DoTA contains 4,677 dash-cam videos collected from YouTube channels. These ego-centric driving videos are from different countries and under different weather and lighting conditions.
 
-**Note that due to issues with YouTube, some videos are no longer available. We have collected 4,085 videos in total.** Most videos in DoTA can be separated into three temporal partitions: precursor, anomaly window, and post-anomaly. We label the first part (i.e. precursor) as normal or non-accident, and the second part (i.e. anomaly window) as anomaly or accident. But we do not use the third part.
+**Note that due to issues with YouTube, some videos are no longer available. We have collected 4,085 videos in total.** Most videos in DoTA can be separated into three temporal partitions: precursor, anomaly window, and post-anomaly. We label the first part (i.e. precursor) as *normal* or *non-accident*, and the second part (i.e. anomaly window) as *anomaly* or *accident*, but we do not use the third part. Details of our dataset are shown below.
+
+Dataset | Training | Validation | Test
+:---: | :---: | :---: | :---:
+\#video clips | 5,700 | 801 | 1,657
+\#frames | 208,649 | 29,997 | 58,778
+
 
 ## Models
 
 ### Spatial-Temporal Stream
+
+The spatial-temporal stream takes RGB frames as input, which contain appearance information. To extract frame-level features from an input video, an ImageNet pre-trained ResNet is applied. To capture high-level (temporal) information, three architectures are employed: a multi-layer perceptron (MLP), a unidirectional Long Short-Term Memory (LSTM), and a bidirectional LSTM (BiLSTM). The MLP doesn't consider temporal dependencies, which leads to degraded performance.
+
+* ResNet + MLP: 
+
+* ResNet + LSTM:
+
+* ResNet + BiLSTM:
 
 
 ### Motion Stream
