@@ -48,7 +48,7 @@ Dataset | Training | Validation | Test
 
 The spatial-temporal stream takes RGB frames as input, which contain appearance information. To extract frame-level features from an input video, an ImageNet pre-trained ResNet is applied. To capture high-level (temporal) information, three architectures are employed: a multi-layer perceptron (MLP), a unidirectional Long Short-Term Memory (LSTM), and a bidirectional LSTM (BiLSTM). The MLP doesn't consider temporal dependencies, which leads to degraded performance.
 
-* ResNet + MLP: 
+* ResNet + MLP: The code is in `frame_video_level_cnn`. Models are trained on individual frames and evaluated by frame-level and video-level metrics.
 
 * ResNet + LSTM:
 
