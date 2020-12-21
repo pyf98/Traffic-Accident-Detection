@@ -2,6 +2,8 @@
 
 This repository contains the code of our IDL course project in Fall 2020.
 
+NOTE: this repo is only for the course project and will not be maintained after this semester.
+
 ## Contributors
 
 **Yifan Peng** (@pyf98) and **Amine Bellamkaddem** (@amine-bellamkaddem) are the two contributors of this repository.
